@@ -28,14 +28,21 @@
     <div id="result"></div>
 
     <script>
+        // Fungsi untuk menghitung nomor minggu yang benar
+        function getWeekNumber(date) {
+            const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
+            const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
+            // Nomor minggu, ditambah 1 agar tidak dimulai dari minggu 0
+            return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+        }
+
         async function cekGiliran() {
             const currentDate = new Date();
-            const firstDateOfYear = new Date(currentDate.getFullYear(), 0, 1);
-            const weekNumber = Math.ceil((((currentDate - firstDateOfYear) / 86400000) + firstDateOfYear.getDay() + 1) / 7);
-            
+            const weekNumber = getWeekNumber(currentDate);
+
             // Fetch data dari timetable.json
             try {
-                const response = await fetch('jadwal.json');
+                const response = await fetch('timetable.json');
                 const data = await response.json();
                 const currentWeek = data.weeks.find(item => item.week === weekNumber);
 
@@ -51,5 +58,4 @@
         }
     </script>
 </body>
-  </html>
-  
+</html>
