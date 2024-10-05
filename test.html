@@ -42,7 +42,7 @@
 
             // Fetch data dari timetable.json
             try {
-                const response = await fetch('timetable.json');
+                const response = await fetch('jadwal.json');
                 const data = await response.json();
                 const currentWeek = data.weeks.find(item => item.week === weekNumber);
 
