@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Giliran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #result {
+            font-size: 2em;
+            color: green;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cek Giliran</h1>
+    <button onclick="cekGiliran()">Cek Giliran</button>
+    <div id="result"></div>
+
+    <script>
+        async function cekGiliran() {
+            const currentDate = new Date();
+            const firstDateOfYear = new Date(currentDate.getFullYear(), 0, 1);
+            const weekNumber = Math.ceil((((currentDate - firstDateOfYear) / 86400000) + firstDateOfYear.getDay() + 1) / 7);
+            
+            // Fetch data dari timetable.json
+            try {
+                const response = await fetch('jadwal.json');
+                const data = await response.json();
+                const currentWeek = data.weeks.find(item => item.week === weekNumber);
+
+                if (currentWeek) {
+                    document.getElementById('result').innerText = "Giliran: " + currentWeek.giliran;
+                } else {
+                    document.getElementById('result').innerText = "Tidak ada data untuk minggu ini.";
+                }
+            } catch (error) {
+                document.getElementById('result').innerText = "Gagal memuat data giliran.";
+                console.error("Error:", error);
+            }
+        }
+    </script>
+</body>
+  </html>
+  
