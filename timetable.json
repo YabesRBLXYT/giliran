@@ -1,0 +1,35 @@
+{
+  "schedule": [
+    {
+      "month": "October",
+      "weeks": [
+        { "week": "1", "giliran": "Kamu" },   // 1-7 Oktober
+        { "week": "2", "giliran": "Abangmu" }, // 8-14 Oktober
+        { "week": "3", "giliran": "Kamu" },   // 15-21 Oktober
+        { "week": "4", "giliran": "Abangmu" }, // 22-28 Oktober
+        { "week": "5", "giliran": "Kamu" }    // 29-31 Oktober
+      ]
+    },
+    {
+      "month": "November",
+      "weeks": [
+        { "week": "1", "giliran": "Abangmu" }, // 1-7 November
+        { "week": "2", "giliran": "Kamu" },    // 8-14 November
+        { "week": "3", "giliran": "Abangmu" }, // 15-21 November
+        { "week": "4", "giliran": "Kamu" },    // 22-28 November
+        { "week": "5", "giliran": "Abangmu" }  // 29-30 November
+      ]
+    },
+    {
+      "month": "December",
+      "weeks": [
+        { "week": "1", "giliran": "Kamu" },    // 1-7 Desember
+        { "week": "2", "giliran": "Abangmu" }, // 8-14 Desember
+        { "week": "3", "giliran": "Kamu" },    // 15-21 Desember
+        { "week": "4", "giliran": "Abangmu" }, // 22-28 Desember
+        { "week": "5", "giliran": "Kamu" }     // 29-31 Desember
+      ]
+    }
+  ]
+    }
+        
