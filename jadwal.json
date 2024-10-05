@@ -1,18 +1,17 @@
 {
   "weeks": [
-    { "week": 40, "giliran": "Kamu" },     
-    { "week": 41, "giliran": "Abangmu" },  
-    { "week": 42, "giliran": "Kamu" },     
-    { "week": 43, "giliran": "Abangmu" },  
-    { "week": 44, "giliran": "Kamu" },     
-    { "week": 45, "giliran": "Abangmu" },  
-    { "week": 46, "giliran": "Kamu" },     
-    { "week": 47, "giliran": "Abangmu" },  
-    { "week": 48, "giliran": "Kamu" },     
-    { "week": 49, "giliran": "Abangmu" },  
-    { "week": 50, "giliran": "Kamu" },     
-    { "week": 51, "giliran": "Abangmu" },  
-    { "week": 52, "giliran": "Kamu" }      
+    { "week": 40, "giliran": "Kamu" },
+    { "week": 41, "giliran": "Kamu" },
+    { "week": 42, "giliran": "Abangmu" },
+    { "week": 43, "giliran": "Kamu" },
+    { "week": 44, "giliran": "Abangmu" },
+    { "week": 45, "giliran": "Kamu" },
+    { "week": 46, "giliran": "Abangmu" },
+    { "week": 47, "giliran": "Kamu" },
+    { "week": 48, "giliran": "Abangmu" },
+    { "week": 49, "giliran": "Kamu" },
+    { "week": 50, "giliran": "Abangmu" },
+    { "week": 51, "giliran": "Kamu" },
+    { "week": 52, "giliran": "Abangmu" }
   ]
-    }
-    
+}
