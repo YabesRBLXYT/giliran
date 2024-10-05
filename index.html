@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Giliran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #result {
+            font-size: 2em;
+            color: green;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cek Giliran</h1>
+    <button onclick="cekGiliran()">Cek Giliran</button>
+    <div id="result"></div>
+
+    <script>
+        async function cekGiliran() {
+            const currentDate = new Date();
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const currentMonth = monthNames[currentDate.getMonth()];
+            const currentWeek = Math.ceil(currentDate.getDate() / 7); // Hitung minggu ke berapa dalam bulan ini
+
+            try {
+                const response = await fetch('timetable.json');
+                const data = await response.json();
+
+                // Cari bulan saat ini
+                const monthSchedule = data.schedule.find(item => item.month === currentMonth);
+                if (monthSchedule) {
+                    // Cari minggu dalam bulan ini
+                    const weekSchedule = monthSchedule.weeks.find(item => item.week == currentWeek);
+                    if (weekSchedule) {
+                        document.getElementById('result').innerText = "Giliran: " + weekSchedule.giliran;
+                    } else {
+                        document.getElementById('result').innerText = "Tidak ada data untuk minggu ini.";
+                    }
+                } else {
+                    document.getElementById('result').innerText = "Tidak ada data untuk bulan ini.";
+                }
+            } catch (error) {
+                document.getElementById('result').innerText = "Gagal memuat data giliran.";
+                console.error("Error:", error);
+            }
+        }
+    </script>
+</body>
+  </html>
+  
